@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Traffic Analytics Dashboard - Smart Traffic Control</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="bg-surface border-b border-border shadow-sm">
+        <div class="max-w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <h1 class="text-xl font-semibold text-text-primary">Smart Traffic Control</h1>
+                    </div>
+                    <div class="h-6 w-px bg-border"></div>
+                    <h2 class="text-lg font-medium text-text-secondary">Analytics Dashboard</h2>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="real_time_traffic_operations_center.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Operations</a>
+                    <a href="ai_powered_traffic_analytics_dashboard.html" class="px-3 py-2 text-sm font-medium text-primary bg-primary-50 rounded-md">Analytics</a>
+                    <a href="executive_traffic_performance_dashboard.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Executive</a>
+                    <a href="incident_response_and_emergency_management.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Emergency</a>
+                </nav>
+
+                <!-- Analytics Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Date Range Picker -->
+                    <div class="flex items-center space-x-2">
+                        <select class="px-3 py-2 text-sm border border-border rounded-md bg-surface focus:ring-2 focus:ring-primary focus:border-primary">
+                            <option>Today</option>
+                            <option>This Week</option>
+                            <option selected>This Month</option>
+                            <option>This Quarter</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+
+                    <!-- Intersection Group Filter -->
+                    <select class="px-3 py-2 text-sm border border-border rounded-md bg-surface focus:ring-2 focus:ring-primary focus:border-primary">
+                        <option>All Intersections</option>
+                        <option>Central Zone</option>
+                        <option>Highway Junctions</option>
+                        <option>Commercial District</option>
+                    </select>
+
+                    <!-- Comparison Mode Toggle -->
+                    <button class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-primary bg-primary-50 border border-primary-200 rounded-md hover:bg-primary-100 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <span>Compare Mode</span>
+                    </button>
+
+                    <!-- Data Refresh Status -->
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                        <span class="text-xs text-text-secondary">Updated 2 min ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="max-w-full px-6 py-6">
+        <!-- Primary Metrics Strip -->
+        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+            <!-- Commute Time Reduction -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Commute Time Reduction</h3>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        <span class="text-xs text-secondary font-medium">+2.3%</span>
+                    </div>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">12.8%</span>
+                    <span class="text-sm text-text-secondary">vs baseline</span>
+                </div>
+                <div class="mt-3 bg-secondary-100 rounded-full h-2">
+                    <div class="bg-secondary w-3/5 h-2 rounded-full"></div>
+                </div>
+                <p class="text-xs text-text-secondary mt-2">Target: 15% by Q4</p>
+            </div>
+
+            <!-- Signal Efficiency Score -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Signal Efficiency Score</h3>
+                    </div>
+                    <span class="badge-success">Excellent</span>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">94.2</span>
+                    <span class="text-sm text-text-secondary">/100</span>
+                </div>
+                <div class="mt-3 h-8">
+                    <svg class="w-full h-full" viewBox="0 0 100 20">
+                        <polyline fill="none" stroke="#0ea5e9" stroke-width="2" points="0,18 20,15 40,12 60,8 80,6 100,4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Bottleneck Resolution Rate -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Bottleneck Resolution</h3>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        <span class="text-xs text-secondary font-medium">+18%</span>
+                    </div>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">87.5%</span>
+                    <span class="text-sm text-text-secondary">resolved</span>
+                </div>
+                <div class="mt-3 flex space-x-2">
+                    <div class="flex-1 bg-warning-100 rounded-full h-2">
+                        <div class="bg-warning w-5/6 h-2 rounded-full"></div>
+                    </div>
+                    <span class="text-xs text-text-secondary">35/40 this month</span>
+                </div>
+            </div>
+
+            <!-- Environmental Impact -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">CO₂ Reduction</h3>
+                    </div>
+                    <span class="text-xs text-text-secondary">This month</span>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">8.4%</span>
+                    <span class="text-sm text-text-secondary">reduction</span>
+                </div>
+                <div class="mt-3 h-8">
+                    <svg class="w-full h-full" viewBox="0 0 100 20">
+                        <polyline fill="none" stroke="#10b981" stroke-width="2" points="0,15 20,13 40,10 60,8 80,6 100,5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <!-- Traffic Volume Trends & AI Predictions (Main Area) -->
+            <section class="xl:col-span-2">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold text-text-primary">Traffic Volume Trends & AI Predictions</h2>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-1 bg-primary rounded-full"></div>
+                                <span class="text-xs text-text-secondary">Actual Volume</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-1 bg-accent rounded-full opacity-60"></div>
+                                <span class="text-xs text-text-secondary">AI Prediction</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-1 bg-secondary rounded-full"></div>
+                                <span class="text-xs text-text-secondary">Optimized Flow</span>
+                            </div>
+                            <button class="btn-primary text-xs px-3 py-1">Drill Down</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Chart Container -->
+                    <div class="relative bg-surface-secondary rounded-lg h-80 p-4">
+                        <svg class="w-full h-full" viewBox="0 0 800 250">
+                            <!-- Grid Lines -->
+                            <defs>
+                                <pattern id="analyticsGrid" width="80" height="25" patternUnits="userSpaceOnUse">
+                                    <path d="M 80 0 L 0 0 0 25" fill="none" stroke="#e5e7eb" stroke-width="1" opacity="0.3"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#analyticsGrid)"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="10" y="30" class="text-xs fill-text-secondary">200K</text>
+                            <text x="10" y="80" class="text-xs fill-text-secondary">150K</text>
+                            <text x="10" y="130" class="text-xs fill-text-secondary">100K</text>
+                            <text x="10" y="180" class="text-xs fill-text-secondary">50K</text>
+                            <text x="10" y="230" class="text-xs fill-text-secondary">0</text>
+                            
+                            <!-- Actual Volume Line -->
+                            <polyline fill="none" stroke="#1e3a8a" stroke-width="3" points="50,180 120,160 190,140 260,120 330,100 400,90 470,110 540,130 610,150 680,170 750,180"/>
+                            
+                            <!-- AI Prediction Line (Dashed) -->
+                            <polyline fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="8,4" opacity="0.8" points="400,90 470,85 540,80 610,85 680,95 750,105"/>
+                            
+                            <!-- Optimized Flow Area -->
+                            <path d="M50,200 L120,185 L190,170 L260,155 L330,140 L400,130 L470,145 L540,160 L610,175 L680,190 L750,200 L750,250 L50,250 Z" fill="#10b981" opacity="0.1"/>
+                            <polyline fill="none" stroke="#10b981" stroke-width="2" points="50,200 120,185 190,170 260,155 330,140 400,130 470,145 540,160 610,175 680,190 750,200"/>
+                            
+                            <!-- Interactive Points -->
+                            <circle cx="400" cy="90" r="4" fill="#1e3a8a" class="cursor-pointer hover:r-6 transition-all"/>
+                            <circle cx="540" cy="80" r="4" fill="#0ea5e9" class="cursor-pointer hover:r-6 transition-all"/>
+                            <circle cx="680" cy="95" r="4" fill="#f59e0b" class="cursor-pointer hover:r-6 transition-all"/>
+                        </svg>
+                        
+                        <!-- Time Labels -->
+                        <div class="absolute bottom-2 left-0 right-0 flex justify-between text-xs text-text-secondary px-12">
+                            <span>00:00</span>
+                            <span>04:00</span>
+                            <span>08:00</span>
+                            <span>12:00</span>
+                            <span>16:00</span>
+                            <span>20:00</span>
+                            <span>24:00</span>
+                        </div>
+                        
+                        <!-- Brush and Zoom Controls -->
+                        <div class="absolute top-4 right-4 flex items-center space-x-2 bg-white bg-opacity-90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm">
+                            <button class="p-1 hover:bg-surface-secondary rounded">
+                                <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                            </button>
+                            <button class="p-1 hover:bg-surface-secondary rounded">
+                                <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Insights -->
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-3 bg-accent-50 border border-accent-200 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                </svg>
+                                <span class="text-sm font-medium text-accent-700">Peak Optimization</span>
+                            </div>
+                            <p class="text-xs text-accent-600 mt-1">AI reduced peak hour congestion by 15.2%</p>
+                        </div>
+                        
+                        <div class="p-3 bg-secondary-50 border border-secondary-200 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-secondary-700">Prediction Accuracy</span>
+                            </div>
+                            <p class="text-xs text-secondary-600 mt-1">94.7% accuracy in volume forecasting</p>
+                        </div>
+                        
+                        <div class="p-3 bg-warning-50 border border-warning-200 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-warning-700">Next Bottleneck</span>
+                            </div>
+                            <p class="text-xs text-warning-600 mt-1">Central Plaza expected at 17:30</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottleneck Severity Ranking -->
+            <section class="xl:col-span-1">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold text-text-primary">Bottleneck Severity Ranking</h2>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                            <span class="text-xs text-text-secondary">Live</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Ranking Table -->
+                    <div class="space-y-3 max-h-96 overflow-y-auto">
+                        <!-- Critical Bottleneck -->
+                        <div class="p-4 bg-error-50 border border-error-200 rounded-lg cursor-pointer hover:bg-error-100 transition-colors">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-bold text-error-700">#1</span>
+                                    <h4 class="text-sm font-medium text-error-700">Highway Junction</h4>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-error rounded-full status-pulse-error"></div>
+                                    <span class="text-xs font-medium text-error-700">Critical</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-error-600">
+                                <span>Severity: 9.2/10</span>
+                                <span>↑ 15% from yesterday</span>
+                            </div>
+                            <div class="mt-2 bg-error-200 rounded-full h-1">
+                                <div class="bg-error w-11/12 h-1 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- High Severity -->
+                        <div class="p-4 bg-warning-50 border border-warning-200 rounded-lg cursor-pointer hover:bg-warning-100 transition-colors">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-bold text-warning-700">#2</span>
+                                    <h4 class="text-sm font-medium text-warning-700">Central Plaza</h4>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-warning rounded-full status-pulse-warning"></div>
+                                    <span class="text-xs font-medium text-warning-700">High</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-warning-600">
+                                <span>Severity: 7.8/10</span>
+                                <span>↓ 3% from yesterday</span>
+                            </div>
+                            <div class="mt-2 bg-warning-200 rounded-full h-1">
+                                <div class="bg-warning w-4/5 h-1 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Medium Severity -->
+                        <div class="p-4 bg-accent-50 border border-accent-200 rounded-lg cursor-pointer hover:bg-accent-100 transition-colors">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-bold text-accent-700">#3</span>
+                                    <h4 class="text-sm font-medium text-accent-700">Main St & 5th Ave</h4>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                    <span class="text-xs font-medium text-accent-700">Medium</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-accent-600">
+                                <span>Severity: 6.1/10</span>
+                                <span>→ No change</span>
+                            </div>
+                            <div class="mt-2 bg-accent-200 rounded-full h-1">
+                                <div class="bg-accent w-3/5 h-1 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Low Severity -->
+                        <div class="p-4 bg-secondary-50 border border-secondary-200 rounded-lg cursor-pointer hover:bg-secondary-100 transition-colors">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-bold text-secondary-700">#4</span>
+                                    <h4 class="text-sm font-medium text-secondary-700">North Bridge</h4>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                                    <span class="text-xs font-medium text-secondary-700">Low</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-secondary-600">
+                                <span>Severity: 4.3/10</span>
+                                <span>↓ 8% from yesterday</span>
+                            </div>
+                            <div class="mt-2 bg-secondary-200 rounded-full h-1">
+                                <div class="bg-secondary w-2/5 h-1 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Optimized -->
+                        <div class="p-4 bg-surface-secondary border border-border rounded-lg cursor-pointer hover:bg-surface transition-colors">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-bold text-text-secondary">#5</span>
+                                    <h4 class="text-sm font-medium text-text-primary">East Commercial</h4>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-text-secondary rounded-full"></div>
+                                    <span class="text-xs font-medium text-text-secondary">Optimized</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-text-secondary">
+                                <span>Severity: 2.1/10</span>
+                                <span>↓ 12% from yesterday</span>
+                            </div>
+                            <div class="mt-2 bg-border rounded-full h-1">
+                                <div class="bg-text-secondary w-1/5 h-1 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Heat Map Toggle -->
+                    <div class="mt-6 pt-4 border-t border-border">
+                        <button class="w-full btn-accent text-sm py-2">View Heat Map</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Comparative Analysis Section -->
+        <section class="mt-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-text-primary">AI-Optimized vs Traditional Signal Timing Performance</h2>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-xs text-text-secondary">AI-Optimized</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-text-secondary rounded-full"></div>
+                            <span class="text-xs text-text-secondary">Traditional</span>
+                        </div>
+                        <button class="btn-primary text-xs px-3 py-1">Statistical Analysis</button>
+                    </div>
+                </div>
+                
+                <!-- Side-by-Side Comparison Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- AI-Optimized Performance -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-medium text-text-primary">AI-Optimized Performance</h3>
+                        <div class="bg-primary-50 rounded-lg p-4">
+                            <div class="space-y-4">
+                                <!-- Average Wait Time -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Average Wait Time</span>
+                                    <span class="text-sm font-medium text-primary">32.4 sec</span>
+                                </div>
+                                <div class="bg-primary-200 rounded-full h-2">
+                                    <div class="bg-primary w-1/3 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Throughput -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Throughput</span>
+                                    <span class="text-sm font-medium text-primary">1,847 veh/hr</span>
+                                </div>
+                                <div class="bg-primary-200 rounded-full h-2">
+                                    <div class="bg-primary w-5/6 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Fuel Efficiency -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Fuel Efficiency</span>
+                                    <span class="text-sm font-medium text-primary">+18.3%</span>
+                                </div>
+                                <div class="bg-primary-200 rounded-full h-2">
+                                    <div class="bg-primary w-4/5 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Queue Length -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Avg Queue Length</span>
+                                    <span class="text-sm font-medium text-primary">4.2 vehicles</span>
+                                </div>
+                                <div class="bg-primary-200 rounded-full h-2">
+                                    <div class="bg-primary w-2/5 h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Traditional Performance -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-medium text-text-primary">Traditional Performance</h3>
+                        <div class="bg-surface-secondary rounded-lg p-4">
+                            <div class="space-y-4">
+                                <!-- Average Wait Time -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Average Wait Time</span>
+                                    <span class="text-sm font-medium text-text-primary">48.7 sec</span>
+                                </div>
+                                <div class="bg-border rounded-full h-2">
+                                    <div class="bg-text-secondary w-1/2 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Throughput -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Throughput</span>
+                                    <span class="text-sm font-medium text-text-primary">1,523 veh/hr</span>
+                                </div>
+                                <div class="bg-border rounded-full h-2">
+                                    <div class="bg-text-secondary w-3/4 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Fuel Efficiency -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Fuel Efficiency</span>
+                                    <span class="text-sm font-medium text-text-primary">Baseline</span>
+                                </div>
+                                <div class="bg-border rounded-full h-2">
+                                    <div class="bg-text-secondary w-3/5 h-2 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Queue Length -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">Avg Queue Length</span>
+                                    <span class="text-sm font-medium text-text-primary">7.8 vehicles</span>
+                                </div>
+                                <div class="bg-border rounded-full h-2">
+                                    <div class="bg-text-secondary w-4/5 h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistical Significance Indicators -->
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="p-3 bg-secondary-50 border border-secondary-200 rounded-lg text-center">
+                        <div class="text-lg font-bold text-secondary">33.5%</div>
+                        <div class="text-xs text-secondary-600">Wait Time Reduction</div>
+                        <div class="text-xs text-text-secondary mt-1">p < 0.001</div>
+                    </div>
+                    
+                    <div class="p-3 bg-accent-50 border border-accent-200 rounded-lg text-center">
+                        <div class="text-lg font-bold text-accent">21.3%</div>
+                        <div class="text-xs text-accent-600">Throughput Increase</div>
+                        <div class="text-xs text-text-secondary mt-1">p < 0.001</div>
+                    </div>
+                    
+                    <div class="p-3 bg-primary-50 border border-primary-200 rounded-lg text-center">
+                        <div class="text-lg font-bold text-primary">46.2%</div>
+                        <div class="text-xs text-primary-600">Queue Reduction</div>
+                        <div class="text-xs text-text-secondary mt-1">p < 0.001</div>
+                    </div>
+                    
+                    <div class="p-3 bg-warning-50 border border-warning-200 rounded-lg text-center">
+                        <div class="text-lg font-bold text-warning">18.3%</div>
+                        <div class="text-xs text-warning-600">Fuel Savings</div>
+                        <div class="text-xs text-text-secondary mt-1">p < 0.01</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenario Planning Tools -->
+        <section class="mt-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-text-primary">Scenario Planning & What-If Analysis</h2>
+                    <button class="btn-accent text-sm px-4 py-2">Create New Scenario</button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Scenario Controls -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-medium text-text-primary">Scenario Parameters</h3>
+                        
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-1">Traffic Volume Change</label>
+                                <input type="range" min="-50" max="50" value="15" class="w-full h-2 bg-surface-secondary rounded-lg appearance-none cursor-pointer" />
+                                <div class="flex justify-between text-xs text-text-secondary mt-1">
+                                    <span>-50%</span>
+                                    <span class="font-medium text-primary">+15%</span>
+                                    <span>+50%</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-1">Signal Response Time</label>
+                                <select class="w-full px-3 py-2 text-sm border border-border rounded-md bg-surface focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option>Immediate (0s)</option>
+                                    <option selected>Standard (30s)</option>
+                                    <option>Delayed (60s)</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-1">Weather Conditions</label>
+                                <select class="w-full px-3 py-2 text-sm border border-border rounded-md bg-surface focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option selected>Clear</option>
+                                    <option>Light Rain</option>
+                                    <option>Heavy Rain</option>
+                                    <option>Snow</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-1">Special Events</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Stadium Event</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" checked class="rounded border-border text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Construction Zone</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full btn-primary text-sm py-2">Run Simulation</button>
+                    </div>
+                    
+                    <!-- Scenario Results -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-md font-medium text-text-primary">Predicted Impact</h3>
+                        
+                        <div class="bg-surface-secondary rounded-lg p-4">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-warning">+23%</div>
+                                    <div class="text-sm text-text-secondary">Average Delay</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-error">-15%</div>
+                                    <div class="text-sm text-text-secondary">Throughput</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Impact Visualization -->
+                            <div class="h-32 bg-white rounded p-2">
+                                <svg class="w-full h-full" viewBox="0 0 400 100">
+                                    <!-- Baseline -->
+                                    <polyline fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="4,2" points="0,50 100,50 200,50 300,50 400,50"/>
+                                    <!-- Scenario Impact -->
+                                    <polyline fill="none" stroke="#f59e0b" stroke-width="3" points="0,50 100,55 200,65 300,70 400,75"/>
+                                    
+                                    <text x="10" y="45" class="text-xs fill-text-secondary">Baseline</text>
+                                    <text x="10" y="85" class="text-xs fill-warning">Scenario</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Recommendations -->
+                        <div class="space-y-3">
+                            <h4 class="text-sm font-medium text-text-primary">AI Recommendations</h4>
+                            
+                            <div class="p-3 bg-accent-50 border border-accent-200 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-medium text-accent-700">Increase green time at Highway Junction by 15 seconds</p>
+                                        <p class="text-xs text-accent-600 mt-1">Expected to reduce delay by 8-12%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 bg-secondary-50 border border-secondary-200 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-secondary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-medium text-secondary-700">Activate dynamic routing for construction zone</p>
+                                        <p class="text-xs text-secondary-600 mt-1">Redirect 30% of traffic to alternate routes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Navigation (Hidden on Desktop) -->
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-lg">
+        <div class="grid grid-cols-4 gap-1 p-2">
+            <a href="real_time_traffic_operations_center.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span class="text-xs">Operations</span>
+            </a>
+            <a href="ai_powered_traffic_analytics_dashboard.html" class="flex flex-col items-center py-2 px-1 text-primary bg-primary-50 rounded-lg">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs font-medium">Analytics</span>
+            </a>
+            <a href="executive_traffic_performance_dashboard.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-xs">Executive</span>
+            </a>
+            <a href="incident_response_and_emergency_management.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                </svg>
+                <span class="text-xs">Emergency</span>
+            </a>
+        </div>
+    </nav>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -97,6 +98,13 @@ app.use(`/api/${API_VERSION}/dashboard`, dashboardRoutes);
 // WebSocket connection handling
 socketHandler(io);
 
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
@@ -126,3 +134,4 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = app;
+

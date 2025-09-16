@@ -92,7 +92,6 @@ app.use(`/api/${API_VERSION}/analytics`, analyticsRoutes);
 app.use(`/api/${API_VERSION}/incidents`, incidentRoutes);
 app.use(`/api/${API_VERSION}/users`, userRoutes);
 app.use(`/api/${API_VERSION}/dashboard`, dashboardRoutes);
-
 // WebSocket connection handling
 socketHandler(io);
 
@@ -132,3 +131,4 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = app;
+

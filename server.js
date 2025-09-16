@@ -70,7 +70,6 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-
 // Static files
 app.use('/uploads', express.static('uploads'));
 
@@ -94,10 +93,8 @@ app.use(`/api/${API_VERSION}/users`, userRoutes);
 app.use(`/api/${API_VERSION}/dashboard`, dashboardRoutes);
 // WebSocket connection handling
 socketHandler(io);
-
 // Serve frontend static files
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -112,9 +109,7 @@ app.use('*', (req, res) => {
 
 // Global error handler
 app.use(errorHandler);
-
 const PORT = process.env.PORT || 5000;
-
 server.listen(PORT, () => {
   console.log(`🚦 Smart Traffic Management Server running on port ${PORT}`);
   console.log(`📊 Environment: ${process.env.NODE_ENV}`);
@@ -131,4 +126,5 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = app;
+
 

@@ -13,6 +13,10 @@
     "lint:fix": "eslint . --fix",
     "setup": "npm install && npm run seed"
   },
+  "engines": {
+    "node": "18.x"
+  }
+
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
@@ -45,3 +49,4 @@
   "author": "Smart Traffic Management Team",
   "license": "MIT"
 }
+

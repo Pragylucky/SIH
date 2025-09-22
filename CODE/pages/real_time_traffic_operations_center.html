@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Traffic Operations Center - Smart Traffic Control</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="bg-surface border-b border-border shadow-sm">
+        <div class="max-w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <h1 class="text-xl font-semibold text-text-primary">Smart Traffic Control</h1>
+                    </div>
+                    <div class="h-6 w-px bg-border"></div>
+                    <h2 class="text-lg font-medium text-text-secondary">Operations Center</h2>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="real_time_traffic_operations_center.html" class="px-3 py-2 text-sm font-medium text-primary bg-primary-50 rounded-md">Operations</a>
+                    <a href="ai_powered_traffic_analytics_dashboard.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Analytics</a>
+                    <a href="executive_traffic_performance_dashboard.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Executive</a>
+                    <a href="incident_response_and_emergency_management.html" class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-md transition-colors">Emergency</a>
+                </nav>
+
+                <!-- System Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- City Zone Selector -->
+                    <select class="px-3 py-2 text-sm border border-border rounded-md bg-surface focus:ring-2 focus:ring-primary focus:border-primary">
+                        <option>Central Zone</option>
+                        <option>North Zone</option>
+                        <option>South Zone</option>
+                        <option>East Zone</option>
+                        <option>West Zone</option>
+                    </select>
+
+                    <!-- Emergency Mode Toggle -->
+                    <button class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-text-primary bg-surface border border-border rounded-md hover:bg-surface-secondary transition-colors">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>Normal Mode</span>
+                    </button>
+
+                    <!-- System Health -->
+                    <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-1">
+                            <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                            <span class="text-xs text-text-secondary">Cameras: 98%</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                            <span class="text-xs text-text-secondary">Sensors: 96%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="max-w-full px-6 py-6">
+        <!-- KPI Cards Row -->
+        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+            <!-- Average Commute Time -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Avg Commute Time</h3>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        <span class="text-xs text-secondary font-medium">-8%</span>
+                    </div>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">24.3</span>
+                    <span class="text-sm text-text-secondary">min</span>
+                </div>
+                <div class="mt-3 h-8">
+                    <svg class="w-full h-full" viewBox="0 0 100 20">
+                        <polyline fill="none" stroke="#10b981" stroke-width="2" points="0,15 20,12 40,8 60,10 80,6 100,4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Active Incidents -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Active Incidents</h3>
+                    </div>
+                    <span class="badge-warning">3 Critical</span>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">12</span>
+                    <span class="text-sm text-text-secondary">total</span>
+                </div>
+                <div class="mt-3 flex space-x-2">
+                    <div class="flex-1 bg-error-100 rounded-full h-2">
+                        <div class="bg-error w-1/4 h-2 rounded-full"></div>
+                    </div>
+                    <span class="text-xs text-text-secondary">25% critical</span>
+                </div>
+            </div>
+
+            <!-- Signal Optimization -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Signal Optimization</h3>
+                    </div>
+                    <span class="badge-success">Active</span>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">87%</span>
+                    <span class="text-sm text-text-secondary">optimized</span>
+                </div>
+                <div class="mt-3 bg-secondary-100 rounded-full h-2">
+                    <div class="bg-secondary w-5/6 h-2 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Traffic Volume Index -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-sm font-medium text-text-secondary">Traffic Volume</h3>
+                    </div>
+                    <span class="text-xs text-text-secondary">Updated 30s ago</span>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="data-value text-3xl">142K</span>
+                    <span class="text-sm text-text-secondary">vehicles/hr</span>
+                </div>
+                <div class="mt-3 h-8">
+                    <svg class="w-full h-full" viewBox="0 0 100 20">
+                        <polyline fill="none" stroke="#1e3a8a" stroke-width="2" points="0,18 20,16 40,12 60,14 80,10 100,8"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <!-- Interactive City Map (Main Area) -->
+            <section class="xl:col-span-2">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold text-text-primary">Real-Time Traffic Flow</h2>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                                <span class="text-xs text-text-secondary">Light Traffic</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-warning rounded-full"></div>
+                                <span class="text-xs text-text-secondary">Moderate</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-error rounded-full"></div>
+                                <span class="text-xs text-text-secondary">Heavy</span>
+                            </div>
+                            <button class="btn-primary text-xs px-3 py-1">Refresh</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Container -->
+                    <div class="relative bg-surface-secondary rounded-lg h-96 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3" alt="City Traffic Map" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        
+                        <!-- Traffic Flow Overlays -->
+                        <div class="absolute inset-0">
+                            <!-- Intersection Markers -->
+                            <div class="absolute top-1/4 left-1/3 w-4 h-4 bg-secondary rounded-full border-2 border-white shadow-md cursor-pointer hover:scale-110 transition-transform" title="Main St & 1st Ave - Normal Flow"></div>
+                            <div class="absolute top-1/2 left-1/2 w-4 h-4 bg-warning rounded-full border-2 border-white shadow-md cursor-pointer hover:scale-110 transition-transform status-pulse-warning" title="Central Plaza - Moderate Congestion"></div>
+                            <div class="absolute top-3/4 right-1/3 w-4 h-4 bg-error rounded-full border-2 border-white shadow-md cursor-pointer hover:scale-110 transition-transform status-pulse-error" title="Highway Junction - Heavy Traffic"></div>
+                            
+                            <!-- Incident Markers -->
+                            <div class="absolute top-1/3 right-1/4 flex items-center justify-center w-6 h-6 bg-error rounded-full border-2 border-white shadow-lg cursor-pointer">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Traffic Flow Lines -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none">
+                                <path d="M 100 150 Q 200 100 300 150" stroke="#10b981" stroke-width="3" fill="none" opacity="0.7"/>
+                                <path d="M 150 200 Q 250 180 350 220" stroke="#f59e0b" stroke-width="4" fill="none" opacity="0.8"/>
+                                <path d="M 200 300 Q 300 280 400 320" stroke="#dc2626" stroke-width="5" fill="none" opacity="0.9"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- WebSocket Status -->
+                        <div class="absolute top-4 right-4 flex items-center space-x-2 bg-white bg-opacity-90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm">
+                            <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                            <span class="text-xs font-medium text-text-primary">Live</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Alerts Sidebar -->
+            <section class="xl:col-span-1">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold text-text-primary">Live Alerts</h2>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-secondary rounded-full status-pulse-success"></div>
+                            <span class="text-xs text-text-secondary">Auto-refresh: 30s</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Alert List -->
+                    <div class="space-y-4 max-h-96 overflow-y-auto">
+                        <!-- Critical Alert -->
+                        <div class="p-4 bg-error-50 border border-error-200 rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-2 h-2 bg-error rounded-full mt-2 status-pulse-error"></div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-error-700">Highway Junction Blocked</p>
+                                    <p class="text-xs text-error-600 mt-1">Major accident causing 45min delays</p>
+                                    <p class="text-xs text-text-secondary mt-2">2 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Warning Alert -->
+                        <div class="p-4 bg-warning-50 border border-warning-200 rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-2 h-2 bg-warning rounded-full mt-2 status-pulse-warning"></div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-warning-700">Signal Malfunction</p>
+                                    <p class="text-xs text-warning-600 mt-1">Traffic light at Central Plaza offline</p>
+                                    <p class="text-xs text-text-secondary mt-2">5 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Info Alert -->
+                        <div class="p-4 bg-accent-50 border border-accent-200 rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-2 h-2 bg-accent rounded-full mt-2"></div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-accent-700">Peak Hour Optimization</p>
+                                    <p class="text-xs text-accent-600 mt-1">AI adjusted 12 signals for better flow</p>
+                                    <p class="text-xs text-text-secondary mt-2">8 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Success Alert -->
+                        <div class="p-4 bg-success-50 border border-success-200 rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-2 h-2 bg-success rounded-full mt-2"></div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-success-700">Incident Cleared</p>
+                                    <p class="text-xs text-success-600 mt-1">North Zone construction zone reopened</p>
+                                    <p class="text-xs text-text-secondary mt-2">12 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- System Alert -->
+                        <div class="p-4 bg-surface-secondary border border-border rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-2 h-2 bg-text-secondary rounded-full mt-2"></div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-text-primary">Camera Maintenance</p>
+                                    <p class="text-xs text-text-secondary mt-1">Scheduled maintenance on East Zone cameras</p>
+                                    <p class="text-xs text-text-secondary mt-2">15 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- View All Button -->
+                    <div class="mt-6 pt-4 border-t border-border">
+                        <button class="w-full btn-accent text-sm py-2">View All Alerts</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Traffic Volume Timeline -->
+        <section class="mt-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-text-primary">Traffic Volume & Predictions</h2>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-1 bg-primary rounded-full"></div>
+                            <span class="text-xs text-text-secondary">Current Volume</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-1 bg-accent rounded-full opacity-60"></div>
+                            <span class="text-xs text-text-secondary">AI Prediction</span>
+                        </div>
+                        <select class="px-3 py-1 text-xs border border-border rounded bg-surface">
+                            <option>Next 2 Hours</option>
+                            <option>Next 4 Hours</option>
+                            <option>Next 8 Hours</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Timeline Chart -->
+                <div class="relative h-32 bg-surface-secondary rounded-lg p-4">
+                    <svg class="w-full h-full" viewBox="0 0 800 100">
+                        <!-- Grid Lines -->
+                        <defs>
+                            <pattern id="grid" width="80" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 80 0 L 0 0 0 20" fill="none" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)"/>
+                        
+                        <!-- Current Volume Line -->
+                        <polyline fill="none" stroke="#1e3a8a" stroke-width="3" points="0,60 80,55 160,50 240,45 320,40 400,35 480,45 560,55 640,65 720,70 800,75"/>
+                        
+                        <!-- AI Prediction Line (Dashed) -->
+                        <polyline fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" points="400,35 480,30 560,25 640,30 720,40 800,50"/>
+                        
+                        <!-- Bottleneck Prediction Markers -->
+                        <circle cx="640" cy="30" r="4" fill="#f59e0b" opacity="0.8"/>
+                        <circle cx="720" cy="40" r="4" fill="#dc2626" opacity="0.8"/>
+                    </svg>
+                    
+                    <!-- Time Labels -->
+                    <div class="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-text-secondary px-4">
+                        <span>18:00</span>
+                        <span>19:00</span>
+                        <span>20:00</span>
+                        <span>21:00</span>
+                    </div>
+                </div>
+                
+                <!-- Prediction Insights -->
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-3 bg-warning-50 border border-warning-200 rounded-lg">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                            </svg>
+                            <span class="text-sm font-medium text-warning-700">Predicted Bottleneck</span>
+                        </div>
+                        <p class="text-xs text-warning-600 mt-1">Central Plaza at 20:15 - Moderate congestion expected</p>
+                    </div>
+                    
+                    <div class="p-3 bg-error-50 border border-error-200 rounded-lg">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm font-medium text-error-700">Critical Alert</span>
+                        </div>
+                        <p class="text-xs text-error-600 mt-1">Highway Junction at 20:45 - Heavy traffic predicted</p>
+                    </div>
+                    
+                    <div class="p-3 bg-secondary-50 border border-secondary-200 rounded-lg">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm font-medium text-secondary-700">AI Recommendation</span>
+                        </div>
+                        <p class="text-xs text-secondary-600 mt-1">Adjust signal timing at 3 intersections to prevent congestion</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Navigation (Hidden on Desktop) -->
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-lg">
+        <div class="grid grid-cols-4 gap-1 p-2">
+            <a href="real_time_traffic_operations_center.html" class="flex flex-col items-center py-2 px-1 text-primary bg-primary-50 rounded-lg">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span class="text-xs font-medium">Operations</span>
+            </a>
+            <a href="ai_powered_traffic_analytics_dashboard.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs">Analytics</span>
+            </a>
+            <a href="executive_traffic_performance_dashboard.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-xs">Executive</span>
+            </a>
+            <a href="incident_response_and_emergency_management.html" class="flex flex-col items-center py-2 px-1 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                </svg>
+                <span class="text-xs">Emergency</span>
+            </a>
+        </div>
+    </nav>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

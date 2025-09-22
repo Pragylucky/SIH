@@ -42,7 +42,7 @@ npm / yarn
 
 Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/smart-traffic-system.git
+git clone https://github.com/Pragylucky/smart-traffic-system.git
 cd smart-traffic-system/backend
 
 
@@ -147,3 +147,4 @@ npm run test:coverage
 This project is licensed under the MIT License.
 
 ✨ Built for SIH Project Demo – Smart & Scalable Traffic Management Solution 🚦
+

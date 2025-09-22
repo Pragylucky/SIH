@@ -1,307 +1,149 @@
-# Smart Traffic Management System - Backend API
+🚦 Smart Traffic Management System
 
-A comprehensive Node.js/Express backend API for the Smart Traffic Management System, providing real-time traffic monitoring, incident management, analytics, and user management capabilities.
+A comprehensive solution for real-time traffic monitoring, incident management, analytics, and user management. This project includes a Node.js/Express backend API and a modern HTML frontend built with Tailwind CSS.
 
-## 🚀 Features
+✅ Tasks Accomplished
 
-- **Real-time Traffic Monitoring**: Live traffic data collection and broadcasting
-- **Incident Management**: Complete incident reporting, tracking, and resolution system
-- **Analytics Dashboard**: Advanced traffic analytics and reporting
-- **User Management**: Role-based authentication and authorization
-- **WebSocket Support**: Real-time updates and notifications
-- **RESTful API**: Comprehensive REST API with proper error handling
-- **Data Validation**: Input validation and sanitization
-- **Rate Limiting**: API rate limiting for security
-- **Database Integration**: MongoDB with Mongoose ODM
+Task 1: Developed a scalable backend API with Express and MongoDB for handling traffic, incidents, users, and analytics.
 
-## 📋 Prerequisites
+Task 2: Integrated WebSocket support for real-time traffic updates and incident alerts.
 
-- Node.js (v14.x or higher)
-- MongoDB (v4.4 or higher)
-- npm or yarn
+Task 3: Built a responsive HTML frontend with Tailwind CSS for dashboards and analytics visualization.
 
-## 🛠️ Installation
+🛠️ Technology Stack
+Technology	Why We Chose It
+Node.js + Express	For building a fast, scalable REST API with real-time WebSocket support.
+MongoDB + Mongoose	Flexible NoSQL database for handling dynamic traffic and incident data.
+Tailwind CSS	Utility-first CSS framework for rapid, responsive UI design.
+JWT (JSON Web Token)	Secure authentication and role-based access control.
+Socket.IO	Real-time communication between backend and frontend.
+✨ Key Features
 
-1. **Clone the repository and navigate to backend directory**
-   ```bash
-   cd backend
-   ```
+Real-time Traffic Monitoring – Live updates on congestion, traffic lights, and incidents.
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Incident Management – Reporting, tracking, and resolving accidents or blockages.
 
-3. **Environment Configuration**
-   ```bash
-   cp config.env.example .env
-   ```
-   
-   Edit the `.env` file with your configuration:
-   ```env
-   PORT=5000
-   NODE_ENV=development
-   MONGODB_URI=mongodb://localhost:27017/smart_traffic_management
-   JWT_SECRET=your_super_secret_jwt_key_here
-   JWT_EXPIRE=7d
-   ```
+Analytics Dashboard – Insights into traffic flow, bottlenecks, and trends.
 
-4. **Start MongoDB**
-   Make sure MongoDB is running on your system.
+User Management – Role-based access (Admin, Operator, Analyst, Viewer).
 
-5. **Seed the database (optional)**
-   ```bash
-   npm run seed
-   ```
+Responsive UI – Tailwind-powered frontend for smooth cross-device experience.
 
-6. **Start the server**
-   ```bash
-   # Development mode
-   npm run dev
-   
-   # Production mode
-   npm start
-   ```
+⚡ Local Setup Instructions
+🔹 Prerequisites
 
-## 📁 Project Structure
+Node.js (v14.x or higher)
 
-```
-backend/
-├── config/
-│   └── database.js          # Database connection configuration
-├── middleware/
-│   ├── auth.js              # Authentication middleware
-│   ├── errorHandler.js      # Global error handling
-│   └── rateLimiter.js       # Rate limiting middleware
-├── models/
-│   ├── User.js              # User model
-│   ├── TrafficData.js       # Traffic data model
-│   ├── Incident.js          # Incident model
-│   └── Analytics.js         # Analytics model
-├── routes/
-│   ├── auth.js              # Authentication routes
-│   ├── traffic.js           # Traffic data routes
-│   ├── incidents.js         # Incident management routes
-│   ├── analytics.js         # Analytics routes
-│   ├── users.js             # User management routes
-│   └── dashboard.js         # Dashboard data routes
-├── socket/
-│   └── socketHandler.js     # WebSocket connection handling
-├── scripts/
-│   └── seedData.js          # Database seeding script
-├── server.js                # Main server file
-├── package.json             # Dependencies and scripts
-└── README.md               # This file
-```
+MongoDB (v4.4 or higher)
 
-## 🔌 API Endpoints
+npm / yarn
 
-### Authentication
-- `POST /api/v1/auth/register` - Register new user
-- `POST /api/v1/auth/login` - User login
-- `POST /api/v1/auth/logout` - User logout
-- `GET /api/v1/auth/me` - Get current user
-- `PUT /api/v1/auth/profile` - Update user profile
-- `PUT /api/v1/auth/change-password` - Change password
+🔹 Backend Setup (Windows & macOS)
 
-### Traffic Data
-- `GET /api/v1/traffic` - Get traffic data with filtering
-- `GET /api/v1/traffic/latest` - Get latest traffic data
-- `GET /api/v1/traffic/intersection/:id` - Get intersection data
-- `GET /api/v1/traffic/stats` - Get traffic statistics
-- `GET /api/v1/traffic/zone/:zone` - Get zone traffic data
-- `POST /api/v1/traffic` - Create traffic data (Operator/Admin)
-- `PUT /api/v1/traffic/:id` - Update traffic data (Operator/Admin)
-- `DELETE /api/v1/traffic/:id` - Delete traffic data (Admin)
+Clone the repository
 
-### Incidents
-- `GET /api/v1/incidents` - Get incidents with filtering
-- `GET /api/v1/incidents/active` - Get active incidents
-- `GET /api/v1/incidents/stats` - Get incident statistics
-- `GET /api/v1/incidents/:id` - Get incident by ID
-- `POST /api/v1/incidents` - Report new incident
-- `PUT /api/v1/incidents/:id` - Update incident (Operator/Admin)
-- `PUT /api/v1/incidents/:id/resolve` - Resolve incident (Operator/Admin)
-- `DELETE /api/v1/incidents/:id` - Delete incident (Admin)
+git clone https://github.com/YOUR_USERNAME/smart-traffic-system.git
+cd smart-traffic-system/backend
 
-### Analytics
-- `GET /api/v1/analytics` - Get analytics reports (Analyst/Admin)
-- `GET /api/v1/analytics/summary` - Get analytics summary (Analyst/Admin)
-- `POST /api/v1/analytics/traffic-flow` - Generate traffic flow analysis (Analyst/Admin)
-- `GET /api/v1/analytics/:id` - Get specific report (Analyst/Admin)
-- `PUT /api/v1/analytics/:id` - Update report (Analyst/Admin)
-- `DELETE /api/v1/analytics/:id` - Delete report (Admin)
 
-### Users
-- `GET /api/v1/users` - Get all users (Admin)
-- `GET /api/v1/users/:id` - Get user by ID (Admin/Owner)
-- `POST /api/v1/users` - Create user (Admin)
-- `PUT /api/v1/users/:id` - Update user (Admin/Owner)
-- `PUT /api/v1/users/:id/activate` - Activate user (Admin)
-- `PUT /api/v1/users/:id/deactivate` - Deactivate user (Admin)
-- `DELETE /api/v1/users/:id` - Delete user (Admin)
-- `GET /api/v1/users/stats/overview` - Get user statistics (Admin)
+Install dependencies
 
-### Dashboard
-- `GET /api/v1/dashboard/overview` - Get dashboard overview
-- `GET /api/v1/dashboard/operations` - Get operations center data
-- `GET /api/v1/dashboard/analytics` - Get analytics dashboard (Analyst/Admin)
-- `GET /api/v1/dashboard/executive` - Get executive dashboard (Admin/Analyst)
-- `GET /api/v1/dashboard/emergency` - Get emergency dashboard
+npm install
 
-## 🔐 Authentication & Authorization
 
-The API uses JWT (JSON Web Tokens) for authentication. Include the token in the Authorization header:
+Configure environment
 
-```
-Authorization: Bearer <your-jwt-token>
-```
+cp config.env.example .env
 
-### User Roles
-- **Admin**: Full system access
-- **Operator**: Traffic operations and incident management
-- **Analyst**: Analytics and reporting access
-- **Viewer**: Read-only access
 
-### Permissions
-- **read**: View data
-- **write**: Create and update data
-- **delete**: Delete data
-- **admin**: Administrative access
+Update .env with your MongoDB URI and JWT secret.
 
-## 🌐 WebSocket Events
+Start MongoDB (make sure it’s running locally).
 
-### Client to Server
-- `join_room` - Join a specific room (zone, intersection, etc.)
-- `leave_room` - Leave a room
-- `request_traffic_data` - Request traffic data
-- `request_incident_data` - Request incident data
-- `traffic_control_command` - Send traffic control commands (Operator/Admin)
-- `emergency_alert` - Send emergency alerts (Emergency team/Admin)
-- `ping` - Health check
+Run the server
 
-### Server to Client
-- `connected` - Connection confirmation
-- `traffic_update` - Real-time traffic data updates
-- `incident_update` - Incident status updates
-- `emergency_alert` - Emergency notifications
-- `system_alert` - System-wide alerts
-- `traffic_broadcast` - Periodic traffic data broadcast
-- `incident_broadcast` - Periodic incident data broadcast
-- `system_health` - System health status
-- `pong` - Health check response
+# Development mode
+npm run dev
 
-## 📊 Database Models
+# Production mode
+npm start
 
-### User
-- Authentication and profile information
-- Role-based permissions
-- User preferences and settings
+🔹 Frontend Setup (Windows & macOS)
 
-### TrafficData
-- Real-time traffic information
-- Vehicle and pedestrian counts
-- Traffic light status
-- Congestion levels
-- Weather conditions
+Navigate to frontend folder
 
-### Incident
-- Incident reporting and tracking
-- Assignment and resolution
-- Impact assessment
-- Media attachments
+cd ../html_app
 
-### Analytics
-- Generated reports and insights
-- Performance metrics
-- Recommendations
-- Visualization data
 
-## 🚀 Deployment
+Install dependencies
 
-### Environment Variables
-```env
-PORT=5000
-NODE_ENV=production
-MONGODB_URI=mongodb://your-mongodb-connection-string
-JWT_SECRET=your-super-secret-jwt-key
-JWT_EXPIRE=7d
-API_VERSION=v1
-RATE_LIMIT_WINDOW_MS=900000
-RATE_LIMIT_MAX_REQUESTS=100
-WEBSOCKET_PORT=5001
-FRONTEND_URL=https://your-frontend-domain.com
-```
+npm install
 
-### Production Considerations
-- Use a process manager like PM2
-- Set up reverse proxy with Nginx
-- Configure SSL/TLS certificates
-- Set up monitoring and logging
-- Use environment-specific configurations
-- Implement database backups
 
-## 🧪 Testing
+Start the development server
 
-```bash
-# Run tests
+npm run dev
+
+
+Build for production
+
+npm run build:css
+
+📂 Project Structure
+smart-traffic-system/
+├── backend/                # Node.js API
+│   ├── config/             # DB config
+│   ├── middleware/         # Auth, error handling, rate limiting
+│   ├── models/             # Mongoose models
+│   ├── routes/             # API routes
+│   ├── socket/             # WebSocket handler
+│   ├── server.js           # Entry point
+│   └── package.json
+│
+└── html_app/               # Tailwind frontend
+    ├── css/
+    ├── pages/
+    ├── index.html
+    ├── tailwind.config.js
+    └── package.json
+
+📊 API Overview
+
+POST /api/v1/auth/login → User login
+
+GET /api/v1/traffic/latest → Get latest traffic data
+
+POST /api/v1/incidents → Report new incident
+
+GET /api/v1/analytics/summary → Get analytics summary
+
+GET /api/v1/dashboard/overview → Dashboard overview
+
+(Full API details in /backend/README.md)
+
+🚀 Deployment
+
+Use PM2 for backend process management.
+
+Use Nginx as reverse proxy.
+
+Configure SSL/TLS certificates for secure access.
+
+Set up database backups & monitoring tools.
+
+🧪 Testing
+
+Run backend tests:
+
 npm test
 
-# Run tests with coverage
+
+With coverage:
+
 npm run test:coverage
-```
 
-## 📝 API Documentation
-
-The API follows RESTful conventions and returns JSON responses. All responses include:
-- `status`: "success" or "error"
-- `message`: Human-readable message
-- `data`: Response data (on success)
-- `errors`: Validation errors (on error)
-
-### Example Response
-```json
-{
-  "status": "success",
-  "message": "Data retrieved successfully",
-  "data": {
-    "trafficData": [...],
-    "pagination": {
-      "currentPage": 1,
-      "totalPages": 10,
-      "totalCount": 100
-    }
-  }
-}
-```
-
-## 🔧 Development
-
-### Adding New Features
-1. Create model in `models/` directory
-2. Add routes in `routes/` directory
-3. Update middleware if needed
-4. Add WebSocket events if real-time updates required
-5. Update documentation
-
-### Code Style
-- Use ESLint for code linting
-- Follow JavaScript best practices
-- Use async/await for asynchronous operations
-- Implement proper error handling
-- Add input validation
-
-## 📞 Support
-
-For support and questions:
-- Check the API documentation
-- Review error logs
-- Contact the development team
-
-## 📄 License
+📄 License
 
 This project is licensed under the MIT License.
 
----
-
-**Smart Traffic Management System** - Intelligent traffic monitoring and management solution.
+✨ Built for SIH Project Demo – Smart & Scalable Traffic Management Solution 🚦

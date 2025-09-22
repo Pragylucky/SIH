@@ -29,13 +29,11 @@ A Smart Traffic Management System designed to address urban congestion challenge
 
 ## Project Links
 
-- **SIH Presentation:** [Final SIH Presentation](URL TO PPT UPLOADED TO GITHUB)
-- **Video Demonstration:** [Watch Video](UNLISTED YOUTUBE LINK)
+- **SIH Presentation:** [Final SIH Presentation](https://github.com/Pragylucky/SIH/blob/main/files/INTERNAL_PPT_ENTHALPY.pdf.pdf)
+- **Video Demonstration:** [Watch Video](https://www.youtube.com/watch?v=X4tlvvBoalc)
 - **Live Deployment:** [View Deployment](DEPLOYED LINK IF ANY)
-- **Source Code:** [GitHub Repository](GITHUB LINK TO THE REPO)
+- **Source Code:** [GitHub Repository](https://github.com/Pragylucky/SIH)
 - **Additional Resources:** [Other Relevant Links](ANY OTHER RELEVANT LINKS)
-
-
 
 ## Additional Notes
 

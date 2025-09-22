@@ -17,7 +17,7 @@ A Smart Traffic Management System designed to address urban congestion challenge
 
 **Team Members:**
 
-- Rupinder Kaur - - @rupinderkaur03
+- Rupinder Kaur -2023UEC2666 - @rupinderkaur03
 - Pradyumn - 2023UEC2675 - @Pradyumn26-bit
 - Ronak - 2023UEE4568 - @USERNAME
 - Pulkit - 2023UEE4522 - @PULKIT-OP
